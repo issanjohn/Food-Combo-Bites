@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="icon" type="image/png" href="fries.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Food Combo Bites</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://pyscript.net/releases/2024.11.1/core.css">
+    <script type="module"
+            src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+</head>
+<body>
+
+<!-- WELCOME PAGE -->
+<section id="welcome-page" class="welcome">
+    <div class="welcome-card">
+        <div class="welcome-icon">🍟</div>
+        <h1>Welcome to <span>Food Combo Bites!</span></h1>
+        <p>Small Bites, Big Delights!</p>
+        <button id="enter-btn" class="primary-btn" type="button">
+            Enter the Menu →
+        </button>
+    </div>
+</section>
+
+<!-- MAIN WEBSITE -->
+<div id="main-site">
+
+    <header class="site-header">
+        <div class="brand">
+            <span>🍟</span>
+            <div>
+                <h1>Food Combo Bites</h1>
+                <p>Small Bites, Big Delights!</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <button class="nav-btn active" data-page="home-page">Home</button>
+        <button class="nav-btn" data-page="bestsellers-page">Best Sellers</button>
+        <button class="nav-btn" data-page="menu-page">Menu</button>
+        <button class="nav-btn" data-page="order-page">
+            My Order (<span id="cart-count">0</span>)
+        </button>
+        <button class="nav-btn" data-page="settings-page">Settings</button>
+    </nav>
+
+    <main class="content">
+
+        <!-- HOME -->
+        <section id="home-page" class="page">
+            <h2>Welcome to Food Combo Bites!</h2>
+            <p>Choose your favorite snacks and enjoy delicious combinations.</p>
+            <button class="primary-btn" data-page="menu-page">
+                Order Your Favorite Foods!
+            </button>
+        </section>
+
+        <!-- BEST SELLERS -->
+        <section id="bestsellers-page" class="page" hidden>
+            <h2>Best Sellers</h2>
+            <div id="bestseller-list" class="product-grid"></div>
+        </section>
+
+        <!-- MENU -->
+        <section id="menu-page" class="page" hidden>
+            <h2>Our Menu</h2>
+            <div id="menu-list" class="product-grid"></div>
+        </section>
+
+        <!-- MY ORDER -->
+        <section id="order-page" class="page" hidden>
+            <h2>🛒 My Order</h2>
+
+            <div id="cart-items">
+                <p>Your order is currently empty.</p>
+            </div>
+
+            <h3>Total: <span id="cart-total">₱0.00</span></h3>
+
+            <div class="order-actions">
+                <button id="clear-cart" class="secondary-btn" type="button">
+                    Clear Order
+                </button>
+
+                <button id="order-now-btn" class="primary-btn" type="button">
+                    Order Now
+                </button>
+            </div>
+
+            <p id="order-message" class="success-message"
+               role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- SETTINGS -->
+        <section id="settings-page" class="page" hidden>
+            <h2>Settings</h2>
+
+            <label class="setting">
+                <span>Dark Mode</span>
+                <input id="dark-mode" type="checkbox">
+            </label>
+
+            <label class="setting">
+                <span>Larger Text</span>
+                <input id="large-text" type="checkbox">
+            </label>
+        </section>
+
+    </main>
+
+    <!-- FOOTER VIDEO ADVERTISEMENT -->
+    <footer class="advertisement">
+        <h2>🍟 Food Combo Bites Advertisement</h2>
+        <p>Hungry? Grab your favorite combo today!</p>
+
+        <video controls autoplay muted loop playsinline>
+            <source src="advertisement.mp4" type="video/mp4">
+            Your browser does not support video playback.
+        </video>
+
+        <p class="ad-caption">
+            Delicious snacks. Great combos. Affordable prices!
+        </p>
+
+        <p class="copyright">
+            © 2026 Food Combo Bites
+        </p>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script type="py" src="./main.py"></script>
+</body>
+</html>
